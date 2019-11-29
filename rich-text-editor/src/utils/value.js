@@ -1,34 +1,13 @@
-import { Value } from 'slate';
-
-const initialValue = Value.fromJSON({
-  document: {
-    nodes: [
+const initialValue = [
+  {
+    type: 'paragraph',
+    children: [
       {
-        object: 'block',
-        type: 'paragraph',
-        nodes: [
-          {
-            object: 'text',
-            text: 'A line of text in a paragraph.'
-          },
-          {
-            object: 'text',
-            text: 'Another line of text'
-          }
-        ]
+        text: 'A line of text in a paragraph.',
+        marks: [],
       },
-      {
-        object: 'block',
-        type: 'paragraph',
-        nodes: [
-          {
-            object: 'text',
-            text: 'Another line of text'
-          }
-        ]
-      }
-    ]
-  }
-})
+    ],
+  },
+]
 
-export default initialValue
+export default initialValue;
