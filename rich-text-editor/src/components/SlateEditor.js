@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { withReact, Slate, Editable } from 'slate-react'
-import { createEditor } from 'slate';
+import { createEditor, Editor } from 'slate';
 import initialValue from '../utils/value';
-import CodeElemeng from './elements/CodeElement';
+import CodeElement from './elements/CodeElement';
 import DefaultElement from './elements/DefaultElement';
 
 export default function SlateEditor() {
@@ -11,6 +11,10 @@ export default function SlateEditor() {
         if (e.key === "&") {
             e.preventDefault()
             editor.exec({type:"insert_text", text:"and"})
+        }
+        if (e.key === "`" && e.ctrlKey) {
+            e.preventDefault();
+            Editor.setNodes(editor, {type: 'code'}, {match: "block"})
         }
     } 
 
@@ -26,8 +30,8 @@ export default function SlateEditor() {
     return (
         <div>
             <h1>The SlateEditor is supposed to go here!</h1>
-            <Slate editor={editor} renderElement={renderElement} defaultValue={initialValue}>            
-                <Editable onKeyDown={keyDown}/>
+            <Slate editor={editor} defaultValue={initialValue}>            
+                <Editable renderElement={renderElement} onKeyDown={keyDown}/>
             </Slate>
         </div>
     )
