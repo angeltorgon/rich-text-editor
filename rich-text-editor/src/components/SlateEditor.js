@@ -6,9 +6,13 @@ import initialValue from '../utils/value';
 export default function SlateEditor() {
     const editor = useMemo(() => withReact(createEditor()), [])
     const keyDown = (e) => {
-        if (e.key == "&") {
+        if (e.key === "&") {
             e.preventDefault()
             editor.exec({type:"insert_text", text:"and"})
+        }
+        if (e.key === "b") {
+            e.preventDefault();
+            editor.exec({type:"add_mark", mark:{type: "bold"}})
         }
     } 
 
