@@ -8,9 +8,17 @@ import DefaultElement from './elements/DefaultElement';
 export default function SlateEditor() {
     const editor = useMemo(() => withReact(createEditor()), [])
     const keyDown = (e) => {
+
         if (e.key === "&") {
             e.preventDefault()
             editor.exec({type:"insert_text", text:"and"})
+        }
+        if (e.key === "n") {
+            e.preventDefault()
+            console.log(Editor.delete(editor))
+            // editor.exec({type:"insert_text", text:"hello"})
+            // editor.
+            // editor.exec({type:"insert_text", text:"and"})
         }
         if (e.key === "`" && e.ctrlKey) {
             e.preventDefault();
@@ -19,6 +27,7 @@ export default function SlateEditor() {
     } 
 
     const renderElement = useCallback((props) => {
+        console.log(props)
         switch (props.element.type) {
             case 'code':
                 return <CodeElement {...props} />
