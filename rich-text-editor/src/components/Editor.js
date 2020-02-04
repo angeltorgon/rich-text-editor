@@ -7,6 +7,9 @@ import Link from '@editorjs/link'
 import Checklist from '@editorjs/checklist'
 import List from '@editorjs/list'
 import Delimiter from '@editorjs/delimiter'
+import Table from '@editorjs/table'
+import Embed from '@editorjs/embed'
+import Marker from '@editorjs/marker'
 
 class Editor extends Component {
   render() {
@@ -130,7 +133,11 @@ class Editor extends Component {
             link: Link,  
             checklist: Checklist,  
             list: List,  
-            delimiter: List
+            delimiter: List,
+            table: Table,
+            ember: Embed,
+            marker: Marker,
+            delimiter: Delimiter
           }
          }
       />
