@@ -5,6 +5,8 @@ import Code from '@editorjs/code'
 import Image from '@editorjs/image'
 import Link from '@editorjs/link'
 import Checklist from '@editorjs/checklist'
+import List from '@editorjs/list'
+import Delimiter from '@editorjs/delimiter'
 
 class Editor extends Component {
   render() {
@@ -127,6 +129,8 @@ class Editor extends Component {
             image: Image,  
             link: Link,  
             checklist: Checklist,  
+            list: List,  
+            delimiter: List
           }
          }
       />
