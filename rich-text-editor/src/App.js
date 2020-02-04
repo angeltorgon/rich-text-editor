@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import SlateEditor from './components/SlateEditor'
+import Editor from './components/Editor.js';
 
 function App() {
   return (
     <div className="App">
-      <SlateEditor />
+        <Editor></Editor>
     </div>
   );
 }
