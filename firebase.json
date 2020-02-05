@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "./rich-text-editor/public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
